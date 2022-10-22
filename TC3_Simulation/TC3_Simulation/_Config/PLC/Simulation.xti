@@ -767,7 +767,7 @@
 		</DataType>
 	</DataTypes>
 	<Project GUID="{00F17158-38D0-4216-B315-379C2020C15B}" Name="Simulation" PrjFilePath="..\..\Simulation\Simulation.plcproj" TmcFilePath="..\..\Simulation\Simulation.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{16444A40-CEB8-0155-A474-D049CD278E3F}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{6524DFE0-9A0D-910E-F5AD-6164A8DE2ECE}">
 			<Name>Simulation Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="1">

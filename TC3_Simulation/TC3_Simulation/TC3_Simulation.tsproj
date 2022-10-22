@@ -11,9 +11,6 @@
 				</Task>
 			</Tasks>
 		</System>
-		<Motion>
-			<NC File="NC.xti"/>
-		</Motion>
 		<Plc>
 			<Project File="Simulation.xti"/>
 		</Plc>
