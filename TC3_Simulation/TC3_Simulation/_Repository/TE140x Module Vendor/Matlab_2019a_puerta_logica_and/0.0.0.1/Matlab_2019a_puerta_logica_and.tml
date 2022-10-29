@@ -1,0 +1,703 @@
+<?xml version="1.0"?>
+<TcModuleLibrary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleLibrary">
+  <Vendor>
+    <Name>TE140x Module Vendor</Name>
+    <ImageData>
+    </ImageData>
+  </Vendor>
+  <DataTypes>
+    <DataType>
+      <Name GUID="{FB9D9A51-E47B-6C67-9013-1C8AA11F3C66}" IecLibraryType="true" CName="TcMgSdk::FpExcptCtrlSet">E_FpExcptCtrlSetEx</Name>
+      <BitSize>8</BitSize>
+      <BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+      <EnumInfo>
+        <Text><![CDATA[CallerExceptions]]></Text>
+        <Enum>1</Enum>
+        <Comment><![CDATA[Use the floating point exception settings provided by the caller]]></Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text><![CDATA[ThrowExceptions]]></Text>
+        <Enum>3</Enum>
+        <Comment><![CDATA[Enable floating point exceptions on invalid operations and divisions by zero]]></Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text><![CDATA[SuppressExceptions]]></Text>
+        <Enum>13</Enum>
+        <Comment><![CDATA[Disable floating point exceptions.]]></Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text><![CDATA[LogExceptions]]></Text>
+        <Enum>19</Enum>
+        <Comment><![CDATA[Log exception information.]]></Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text><![CDATA[LogAndHold]]></Text>
+        <Enum>51</Enum>
+        <Comment><![CDATA[Log exception information and puase execution of the cyclic code after completion of the actual cycle]]></Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text><![CDATA[LogAndCatch]]></Text>
+        <Enum>83</Enum>
+        <Comment><![CDATA[Log exception information and immediately terminate execution of the cyclic code. Reinitialization is required to restart.]]></Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text><![CDATA[LogAndDump]]></Text>
+        <Enum>147</Enum>
+        <Comment><![CDATA[Log exception information, create a dump file with detailed exception information and try to continue execution of the cyclic code]]></Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text><![CDATA[LogHoldAndDump]]></Text>
+        <Enum>179</Enum>
+        <Comment><![CDATA[Log exception information, create a dump file with detailed exception information and puase execution of the cyclic code after completion of the actual cycle]]></Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text><![CDATA[LogCatchAndDump]]></Text>
+        <Enum>211</Enum>
+        <Comment><![CDATA[Log exception information, create a dump file with detailed exception information and immediately terminate execution of the cyclic code. Reinitialization is required to restart.]]></Comment>
+      </EnumInfo>
+      <Properties>
+        <Property>
+          <Name>ModuleGenerator_DutShadow</Name>
+          <Value>{F26DC700-AACE-4548-857F-B87D9CC2BED8}</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name GUID="{DFC59318-91EB-AE82-8AD7-4DBD16A4E1B1}" IecLibraryType="true" CName="TcMgSdk::ExceptionInfo">ST_ExceptionInfo</Name>
+      <BitSize>1376</BitSize>
+      <SubItem>
+        <Name>nExceptionCode</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>0</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>sTmxName</Name>
+        <Type GUID="{18071995-0000-0000-0000-00010000007F}">STRING(127)</Type>
+        <BitSize>1024</BitSize>
+        <BitOffs>32</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>nTmxVersion</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+        <ArrayInfo>
+          <LBound>0</LBound>
+          <Elements>4</Elements>
+        </ArrayInfo>
+        <BitSize>128</BitSize>
+        <BitOffs>1056</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>nInstructionAddr</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>1184</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>nReturnAddr</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+        <ArrayInfo>
+          <LBound>0</LBound>
+          <Elements>4</Elements>
+        </ArrayInfo>
+        <BitSize>128</BitSize>
+        <BitOffs>1216</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bDumpCreated</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>1344</BitOffs>
+      </SubItem>
+      <Properties>
+        <Property>
+          <Name>ModuleGenerator_DutShadow</Name>
+          <Value>{241597CD-DFF8-4569-90EE-6B470D7A1D92}</Value>
+        </Property>
+      </Properties>
+    </DataType>
+  </DataTypes>
+  <Licenses />
+  <Library>
+    <Name>Matlab_2019a_puerta_logica_and</Name>
+    <Version>0.0.0.1</Version>
+    <Group GUID="{5E25B681-A0D1-32F4-3E69-0CFC9DC6C42C}">TE140x Module Vendor</Group>
+    <POUs>
+      <POU Folder="POUs">
+        <Name GUID="{0CE0EC75-7475-6199-AD16-62B8900F45AB}" IecLibraryType="true">FB_Matlab_2019a_puerta_logica_and</Name>
+        <BitSize X64="3968">3840</BitSize>
+        <SubItem>
+          <Name>m_pData</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs X64="64">32</BitOffs>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_hide</Name>
+            </Property>
+            <Property>
+              <Name>plcAttribute_no_copy</Name>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>eTraceLevelMax</Name>
+          <Type GUID="{8007AE3B-86BB-40F2-B385-EF87FCC239A4}">TcTraceLevel</Type>
+          <BitSize>32</BitSize>
+          <BitOffs X64="128">64</BitOffs>
+          <Default>
+            <EnumText>TcTraceLevel.tlInfo</EnumText>
+          </Default>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_TcInitSymbol</Name>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>sInstancePath</Name>
+          <Type GUID="{18071995-0000-0000-0000-0001000000FF}">STRING(255)</Type>
+          <BitSize>2048</BitSize>
+          <BitOffs X64="192">128</BitOffs>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_hide</Name>
+            </Property>
+            <Property>
+              <Name>plcAttribute_instance-path</Name>
+            </Property>
+            <Property>
+              <Name>plcAttribute_noinit</Name>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>m_HResultLog</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <BitSize>32</BitSize>
+          <BitOffs X64="2240">2176</BitOffs>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_hide</Name>
+            </Property>
+            <Property>
+              <Name>plcAttribute_noinit</Name>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>m_HResult</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <BitSize>32</BitSize>
+          <BitOffs X64="2272">2208</BitOffs>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_hide</Name>
+            </Property>
+            <Property>
+              <Name>plcAttribute_noinit</Name>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>m_ExtModeData</Name>
+          <Type GUID="{18071995-0000-0000-0000-00000000000B}">ULINT</Type>
+          <BitSize>64</BitSize>
+          <BitOffs X64="3776">3712</BitOffs>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_hide</Name>
+            </Property>
+            <Property>
+              <Name>plcAttribute_no_copy</Name>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>bIn1</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <Comment><![CDATA[Original Name = In1]]></Comment>
+          <BitSize>8</BitSize>
+          <BitOffs X64="3840">3776</BitOffs>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>Input</Value>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>bIn2</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <Comment><![CDATA[Original Name = In2]]></Comment>
+          <BitSize>8</BitSize>
+          <BitOffs X64="3848">3784</BitOffs>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>Input</Value>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>bOut1</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <Comment><![CDATA[Original Name = Out1]]></Comment>
+          <BitSize>8</BitSize>
+          <BitOffs X64="3856">3792</BitOffs>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>Output</Value>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>pPMatlab_2019a_puerta_logica_a_M</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <Comment><![CDATA[Original Name = PMatlab_2019a_puerta_logica_a_M]]></Comment>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs X64="3904">3808</BitOffs>
+        </SubItem>
+        <PropertyItem>
+          <Name NoSetter="true">nHResult</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_monitoring</Name>
+              <Value>call</Value>
+            </Property>
+          </Properties>
+        </PropertyItem>
+        <PropertyItem>
+          <Name>eInitExceptionHandling</Name>
+          <Type GUID="{FB9D9A51-E47B-6C67-9013-1C8AA11F3C66}">E_FpExcptCtrlSetEx</Type>
+          <BitSize>8</BitSize>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_monitoring</Name>
+              <Value>call</Value>
+            </Property>
+          </Properties>
+        </PropertyItem>
+        <PropertyItem>
+          <Name>eUpdateExceptionHandling</Name>
+          <Type GUID="{FB9D9A51-E47B-6C67-9013-1C8AA11F3C66}">E_FpExcptCtrlSetEx</Type>
+          <BitSize>8</BitSize>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_monitoring</Name>
+              <Value>call</Value>
+            </Property>
+          </Properties>
+        </PropertyItem>
+        <PropertyItem>
+          <Name NoSetter="true">nExceptionCnt</Name>
+          <Type GUID="{18071995-0000-0000-0000-00000000000B}">ULINT</Type>
+          <BitSize>64</BitSize>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_monitoring</Name>
+              <Value>call</Value>
+            </Property>
+          </Properties>
+        </PropertyItem>
+        <PropertyItem>
+          <Name NoSetter="true">stActiveException</Name>
+          <Type GUID="{DFC59318-91EB-AE82-8AD7-4DBD16A4E1B1}">ST_ExceptionInfo</Type>
+          <BitSize>1376</BitSize>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_monitoring</Name>
+              <Value>variable</Value>
+            </Property>
+          </Properties>
+        </PropertyItem>
+        <PropertyItem>
+          <Name NoSetter="true">bInitialized</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_monitoring</Name>
+              <Value>call</Value>
+            </Property>
+          </Properties>
+        </PropertyItem>
+        <PropertyItem>
+          <Name>bExecute</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_monitoring</Name>
+              <Value>call</Value>
+            </Property>
+          </Properties>
+        </PropertyItem>
+        <Method>
+          <Name>FB_exit</Name>
+          <ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType>
+          <ReturnBitSize>8</ReturnBitSize>
+          <Parameter>
+            <Name>bInCopyCode</Name>
+            <Type GUID="{18071995-0000-0000-0000-000000000030}" Direction="in">BOOL</Type>
+            <BitSize>8</BitSize>
+          </Parameter>
+        </Method>
+        <Method>
+          <Name>FB_init</Name>
+          <ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType>
+          <ReturnBitSize>8</ReturnBitSize>
+          <Parameter>
+            <Name>bInitRetains</Name>
+            <Type GUID="{18071995-0000-0000-0000-000000000030}" Direction="in">BOOL</Type>
+            <BitSize>8</BitSize>
+          </Parameter>
+          <Parameter>
+            <Name>bInCopyCode</Name>
+            <Type GUID="{18071995-0000-0000-0000-000000000030}" Direction="in">BOOL</Type>
+            <BitSize>8</BitSize>
+          </Parameter>
+        </Method>
+        <Properties>
+          <Property>
+            <Name>PouType</Name>
+            <Value>FunctionBlock</Value>
+          </Property>
+          <Property>
+            <Name>plcAttribute_reflection</Name>
+          </Property>
+          <Property>
+            <Name>TcExternalPou</Name>
+          </Property>
+        </Properties>
+        <Licenses>
+          <License>
+            <LicenseId>{AD7F40C3-F160-4413-83E3-6B7656A795A2}</LicenseId>
+            <Comment><![CDATA[MatSIM License]]></Comment>
+          </License>
+        </Licenses>
+      </POU>
+    </POUs>
+    <DUTs>
+      <DUT Folder="Duts">
+        <Name GUID="{E9CBB271-1293-9DD0-DBB8-0BDD4AD74CBF}" IecLibraryType="true">ST_FB_Matlab_2019a_puerta_logica_and_FB_Main</Name>
+        <BitSize X64="64">32</BitSize>
+        <SubItem>
+          <Name>pInst</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>plcAttribute_hide</Name>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{82FB6D28-34EE-664B-AEB2-4DB91C651038}" IecLibraryType="true">ST_FB_Matlab_2019a_puerta_logica_and_FB_exit</Name>
+        <BitSize X64="128">64</BitSize>
+        <SubItem>
+          <Name>pInst</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>bInCopyCode</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <BitOffs X64="64">32</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>plcAttribute_hide</Name>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{3B07F3A3-5E1F-1E3A-79F0-DBA2DEE0E14E}" IecLibraryType="true">ST_FB_Matlab_2019a_puerta_logica_and_FB_init</Name>
+        <BitSize X64="128">64</BitSize>
+        <SubItem>
+          <Name>pInst</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>bInitRetains</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <BitOffs X64="64">32</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>bInCopyCode</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <BitOffs X64="72">40</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>plcAttribute_hide</Name>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{62FD25C6-39DC-CF12-89C5-98ECE96CFB85}" IecLibraryType="true">ST_GetSet_HRESULT</Name>
+        <BitSize X64="128">64</BitSize>
+        <SubItem>
+          <Name>pInst</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>nParam</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <BitSize>32</BitSize>
+          <BitOffs X64="64">32</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>plcAttribute_hide</Name>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="DUTs">
+        <Name GUID="{FB9D9A51-E47B-6C67-9013-1C8AA11F3C66}" IecLibraryType="true" CName="TcMgSdk::FpExcptCtrlSet">E_FpExcptCtrlSetEx</Name>
+        <BitSize>8</BitSize>
+        <BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+        <EnumInfo>
+          <Text><![CDATA[CallerExceptions]]></Text>
+          <Enum>1</Enum>
+          <Comment><![CDATA[Use the floating point exception settings provided by the caller]]></Comment>
+        </EnumInfo>
+        <EnumInfo>
+          <Text><![CDATA[ThrowExceptions]]></Text>
+          <Enum>3</Enum>
+          <Comment><![CDATA[Enable floating point exceptions on invalid operations and divisions by zero]]></Comment>
+        </EnumInfo>
+        <EnumInfo>
+          <Text><![CDATA[SuppressExceptions]]></Text>
+          <Enum>13</Enum>
+          <Comment><![CDATA[Disable floating point exceptions.]]></Comment>
+        </EnumInfo>
+        <EnumInfo>
+          <Text><![CDATA[LogExceptions]]></Text>
+          <Enum>19</Enum>
+          <Comment><![CDATA[Log exception information.]]></Comment>
+        </EnumInfo>
+        <EnumInfo>
+          <Text><![CDATA[LogAndHold]]></Text>
+          <Enum>51</Enum>
+          <Comment><![CDATA[Log exception information and puase execution of the cyclic code after completion of the actual cycle]]></Comment>
+        </EnumInfo>
+        <EnumInfo>
+          <Text><![CDATA[LogAndCatch]]></Text>
+          <Enum>83</Enum>
+          <Comment><![CDATA[Log exception information and immediately terminate execution of the cyclic code. Reinitialization is required to restart.]]></Comment>
+        </EnumInfo>
+        <EnumInfo>
+          <Text><![CDATA[LogAndDump]]></Text>
+          <Enum>147</Enum>
+          <Comment><![CDATA[Log exception information, create a dump file with detailed exception information and try to continue execution of the cyclic code]]></Comment>
+        </EnumInfo>
+        <EnumInfo>
+          <Text><![CDATA[LogHoldAndDump]]></Text>
+          <Enum>179</Enum>
+          <Comment><![CDATA[Log exception information, create a dump file with detailed exception information and puase execution of the cyclic code after completion of the actual cycle]]></Comment>
+        </EnumInfo>
+        <EnumInfo>
+          <Text><![CDATA[LogCatchAndDump]]></Text>
+          <Enum>211</Enum>
+          <Comment><![CDATA[Log exception information, create a dump file with detailed exception information and immediately terminate execution of the cyclic code. Reinitialization is required to restart.]]></Comment>
+        </EnumInfo>
+        <Properties>
+          <Property>
+            <Name>ModuleGenerator_DutShadow</Name>
+            <Value>{F26DC700-AACE-4548-857F-B87D9CC2BED8}</Value>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{D0C4DC43-041F-5401-8806-A0B75C5E86F5}" IecLibraryType="true">ST_GetSet_E_FpExcptCtrlSetEx</Name>
+        <BitSize X64="128">64</BitSize>
+        <SubItem>
+          <Name>pInst</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>eParam</Name>
+          <Type GUID="{FB9D9A51-E47B-6C67-9013-1C8AA11F3C66}">E_FpExcptCtrlSetEx</Type>
+          <BitSize>8</BitSize>
+          <BitOffs X64="64">32</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>plcAttribute_hide</Name>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{AF4FAE78-C351-33B9-3116-703EB3E659AE}" IecLibraryType="true">ST_GetSet_ULINT</Name>
+        <BitSize>128</BitSize>
+        <SubItem>
+          <Name>pInst</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>nParam</Name>
+          <Type GUID="{18071995-0000-0000-0000-00000000000B}">ULINT</Type>
+          <BitSize>64</BitSize>
+          <BitOffs>64</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>plcAttribute_hide</Name>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="DUTs">
+        <Name GUID="{DFC59318-91EB-AE82-8AD7-4DBD16A4E1B1}" IecLibraryType="true" CName="TcMgSdk::ExceptionInfo">ST_ExceptionInfo</Name>
+        <BitSize>1376</BitSize>
+        <SubItem>
+          <Name>nExceptionCode</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+          <BitSize>32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>sTmxName</Name>
+          <Type GUID="{18071995-0000-0000-0000-00010000007F}">STRING(127)</Type>
+          <BitSize>1024</BitSize>
+          <BitOffs>32</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>nTmxVersion</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+          <ArrayInfo>
+            <LBound>0</LBound>
+            <Elements>4</Elements>
+          </ArrayInfo>
+          <BitSize>128</BitSize>
+          <BitOffs>1056</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>nInstructionAddr</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+          <BitSize>32</BitSize>
+          <BitOffs>1184</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>nReturnAddr</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+          <ArrayInfo>
+            <LBound>0</LBound>
+            <Elements>4</Elements>
+          </ArrayInfo>
+          <BitSize>128</BitSize>
+          <BitOffs>1216</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>bDumpCreated</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <BitOffs>1344</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>ModuleGenerator_DutShadow</Name>
+            <Value>{241597CD-DFF8-4569-90EE-6B470D7A1D92}</Value>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{76763E5A-C0CA-FFEF-59E6-57F464C510E7}" IecLibraryType="true">ST_GetSet_ST_ExceptionInfo</Name>
+        <BitSize X64="1472">1408</BitSize>
+        <SubItem>
+          <Name>pInst</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>stParam</Name>
+          <Type GUID="{DFC59318-91EB-AE82-8AD7-4DBD16A4E1B1}">ST_ExceptionInfo</Type>
+          <BitSize>1376</BitSize>
+          <BitOffs X64="64">32</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>plcAttribute_hide</Name>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{DF122A34-7EC9-F47C-1B74-6BFBEAEC3565}" IecLibraryType="true">ST_GetSet_BOOL</Name>
+        <BitSize X64="128">64</BitSize>
+        <SubItem>
+          <Name>pInst</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>bParam</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <BitOffs X64="64">32</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>plcAttribute_hide</Name>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{0C2145E2-A098-7272-123E-FE87BE28187C}" IecLibraryType="true" CName="ExtU_Matlab_2019a_puerta_logi_T">ST_ExtU_Matlab_2019a_puerta_logi_T</Name>
+        <BitSize>16</BitSize>
+        <SubItem>
+          <Name>bIn1</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>bIn2</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <BitOffs>8</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>ModuleGenerator_DutShadow</Name>
+            <Value>{67BB4889-131D-50A0-6E5C-357E55B6A00D}</Value>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{4BD27720-7A10-9C88-8653-D34BC6E8A9B6}" IecLibraryType="true" CName="ExtY_Matlab_2019a_puerta_logi_T">ST_ExtY_Matlab_2019a_puerta_logi_T</Name>
+        <BitSize>8</BitSize>
+        <SubItem>
+          <Name>bOut1</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>ModuleGenerator_DutShadow</Name>
+            <Value>{548D8874-3E4B-CFCC-B4A9-DF030EE9DDAC}</Value>
+          </Property>
+        </Properties>
+      </DUT>
+    </DUTs>
+  </Library>
+</TcModuleLibrary>
